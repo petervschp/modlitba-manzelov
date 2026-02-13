@@ -7,7 +7,6 @@
   <meta name="description" content="Deväť pohľadov a udržateľná prax modlitby manželov bez detí – čitateľné, prehľadné a vhodné aj na počúvanie (TTS)." />
   <meta name="color-scheme" content="light dark" />
 
-  <!-- Open Graph (voliteľné, ale odporúčané pre zdieľanie) -->
   <meta property="og:title" content="Modlitba manželov bez detí" />
   <meta property="og:description" content="Deväť pohľadov a udržateľná prax modlitby manželov bez detí." />
   <meta property="og:type" content="article" />
@@ -73,6 +72,7 @@
       border-bottom: 1px solid var(--border);
       background: linear-gradient(180deg, rgba(37,99,235,.08), rgba(37,99,235,0));
     }
+
     .wrap{
       max-width: 1100px;
       margin: 0 auto;
@@ -85,6 +85,7 @@
       margin: 0 0 .35rem 0;
       line-height: 1.15;
     }
+
     .subtitle{
       margin: 0;
       color: var(--muted);
@@ -96,21 +97,27 @@
       padding: 1.4rem 0 4rem;
     }
 
+    /* ✅ Explicitné rozloženie bez „dier“ */
     .page{
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 360px; /* článok + sidebar */
+      grid-template-columns: minmax(0, 1fr) 360px;
+      grid-template-areas: "article toc";
       gap: 1.2rem;
       align-items: start;
     }
 
-    /* Desktop: článok vľavo, TOC vpravo (aj keď je aside prvý v HTML) */
-    .page > article { grid-column: 1; }
-    .page > aside  { grid-column: 2; }
-
+    /* Na mobile dáme TOC navrch (vizuálne) */
     @media (max-width: 900px){
-      .page{ grid-template-columns: 1fr; }
-      .page > article, .page > aside { grid-column: auto; } /* dôležité */
+      .page{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "toc"
+          "article";
+      }
     }
+
+    article{ grid-area: article; max-width: var(--maxw); }
+    aside.toc{ grid-area: toc; }
 
     .card{
       background: var(--card);
@@ -169,10 +176,6 @@
       font-size: .92rem;
       color: var(--muted);
       margin: .6rem 0 0;
-    }
-
-    article{
-      max-width: var(--maxw);
     }
 
     .section{
@@ -236,11 +239,6 @@
       font-size: 1.03rem;
       letter-spacing: -0.01em;
     }
-    .content hr{
-      border: 0;
-      border-top: 1px solid var(--border);
-      margin: 1rem 0;
-    }
 
     .callout{
       background: color-mix(in srgb, var(--card), var(--accent) 8%);
@@ -257,7 +255,6 @@
     }
     footer p{ margin: .2rem 0; }
 
-    /* Print: všetko rozbalené a bez zbytočností */
     @media print{
       header{ border-bottom: none; background: none; padding: 0 0 1rem; }
       .toc{ display:none !important; }
@@ -291,26 +288,7 @@
   <main class="wrap" id="obsah">
     <div class="page">
 
-      <aside class="card toc" aria-label="Navigácia a ovládanie">
-        <h2>Obsah</h2>
-        <ol>
-          <li><a href="#preco">Prečo modlitba bez detí</a></li>
-          <li><a href="#devat">Deväť pohľadov</a></li>
-          <li><a href="#praxa">Udržateľná štruktúra</a></li>
-          <li><a href="#pravidla">Šesť pravidiel</a></li>
-          <li><a href="#zaver">Záver</a></li>
-        </ol>
-
-        <div class="controls" role="group" aria-label="Ovládanie sekcií">
-          <button type="button" id="openAll">Rozbaliť všetko</button>
-          <button type="button" id="closeAll">Zbaliť všetko</button>
-          <button type="button" id="ttsMode" aria-pressed="false">Režim počúvania</button>
-        </div>
-        <p class="hint">
-          Tip: „Režim počúvania“ rozbalí obsah pre plynulé TTS bez klikania sekcií.
-        </p>
-      </aside>
-
+      <!-- Článok -->
       <article aria-label="Text článku">
 
         <section class="section" id="preco">
@@ -366,7 +344,6 @@
               <span class="sum-tag">Hlavná časť</span>
             </summary>
             <div class="content">
-
               <h3>1) Biblický pohľad: zmluva, dom na skale, komunio</h3>
               <p>
                 Písmo vedie manželov k pohľadu na manželstvo ako na zmluvu, nie iba kontrakt: vernosť,
@@ -464,7 +441,6 @@
                 Modlitba formuje aj rozlišovanie: komu a kedy otvoriť dom, do čoho sa zapojiť, čo odmietnuť bez viny,
                 ako slúžiť v zhode, nie v rozpore.
               </p>
-
             </div>
           </details>
         </section>
@@ -476,7 +452,7 @@
                 <path d="M7 5l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <span class="sum-title">Udržateľná štruktúra na 10–15 minút</span>
-              <span class="sum-tag">Prax</span>
+              <span class="sum-tag">Praxis</span>
             </summary>
             <div class="content">
               <ol>
@@ -568,6 +544,28 @@
         </section>
 
       </article>
+
+      <!-- Sidebar / TOC -->
+      <aside class="card toc" aria-label="Navigácia a ovládanie">
+        <h2>Obsah</h2>
+        <ol>
+          <li><a href="#preco">Prečo modlitba bez detí</a></li>
+          <li><a href="#devat">Deväť pohľadov</a></li>
+          <li><a href="#praxa">Udržateľná štruktúra</a></li>
+          <li><a href="#pravidla">Šesť pravidiel</a></li>
+          <li><a href="#zaver">Záver</a></li>
+        </ol>
+
+        <div class="controls" role="group" aria-label="Ovládanie sekcií">
+          <button type="button" id="openAll">Rozbaliť všetko</button>
+          <button type="button" id="closeAll">Zbaliť všetko</button>
+          <button type="button" id="ttsMode" aria-pressed="false">Režim počúvania</button>
+        </div>
+        <p class="hint">
+          Tip: „Režim počúvania“ rozbalí obsah pre plynulé TTS bez klikania sekcií.
+        </p>
+      </aside>
+
     </div>
   </main>
 
@@ -608,7 +606,6 @@
       setAll(next);
     });
 
-    // Restore preference
     const saved = localStorage.getItem("ttsMode");
     if (saved === "on") {
       ttsBtn.setAttribute("aria-pressed", "true");
