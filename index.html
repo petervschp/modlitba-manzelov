@@ -98,12 +98,18 @@
 
     .page{
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 360px;
+      grid-template-columns: minmax(0, 1fr) 360px; /* článok + sidebar */
       gap: 1.2rem;
       align-items: start;
     }
+
+    /* Desktop: článok vľavo, TOC vpravo (aj keď je aside prvý v HTML) */
+    .page > article { grid-column: 1; }
+    .page > aside  { grid-column: 2; }
+
     @media (max-width: 900px){
       .page{ grid-template-columns: 1fr; }
+      .page > article, .page > aside { grid-column: auto; } /* dôležité */
     }
 
     .card{
@@ -393,3 +399,221 @@
                 Sviatosť manželstva nie je spomienka na deň svadby, ale trvalý prameň milosti.
                 Eucharistická logika (prijímať → ďakovať → darovať sa) sa dá preniesť do modlitby:
                 vďačnosť za dar druhého, odovzdanie ťažkého dňa Bohu, prosba o silu milovať.
+              </p>
+
+              <h3>4) Súčasná teológia: communio osôb, spiritualita každodennosti, rozlišovanie</h3>
+              <p>
+                Modlitba bez detí je špeciálne miesto pre rozlišovanie: čas, peniaze, hranice, služba,
+                sexualita, oddych. Vracia manželov k zdrojovým otázkam: <em>Prečo sme spolu? Kam nás Boh vedie?</em>
+                Zdravý rytmus však potrebuje aj bežné dni – nie iba krízové volanie.
+              </p>
+
+              <h3>5) Magistérium: jemná korekcia typických úskalí</h3>
+              <p>
+                Učenie Cirkvi netlačí na uniformitu štýlu, ale na vernosť a vytrvalosť. Pomáha zvoliť formu,
+                ktorú „unesie“ slabší, a iba občas pridať bohatšiu. Medzi úskalia patrí:
+                modlitba sa zmení na debatu; nerovnaká „duchovná teplota“; redukcia modlitby na výkon.
+                Kľúčové texty: <em>Familiaris consortio</em>, <em>Gratissimam sane</em>, <em>Amoris laetitia</em>,
+                <em>Sacramentum caritatis</em> a <em>Katechizmus Katolíckej cirkvi</em>.
+              </p>
+
+              <h3>6) Teológia tela: jednota tela a ducha, dar seba, čistota srdca</h3>
+              <p>
+                Optika teológie tela zvýrazňuje jednota tela a ducha; dar seba; čistota srdca ako integrácia túžby –
+                nie potláčanie, ale pravdivé nasmerovanie, aby túžba viedla ku komunii, nie k používaniu.
+              </p>
+              <ul>
+                <li><strong>Vďačnosť:</strong> vidieť partnera ako dar, nie samozrejmosť.</li>
+                <li><strong>Pravda:</strong> pomenovať realitu bez poníženia a útoku.</li>
+                <li><strong>Odpustenie:</strong> obnoviť dar seba konkrétne, nie všeobecne.</li>
+                <li><strong>Požehnanie:</strong> potvrdiť dôstojnosť partnera slovom aj jednoduchým gestom úcty.</li>
+              </ul>
+              <p>
+                Teológia tela sa dotýka aj intimity: priniesť Bohu aj túto oblasť bez hanby – prosiť o čistotu srdca,
+                aby sa v blízkosti nik necítil použitý, ale prijatý.
+              </p>
+
+              <h3>7) Spirituálno-asketický a kontemplatívny pohľad: ticho, prítomnosť, vernosť</h3>
+              <p>
+                Aby modlitba zjednocovala, potrebuje jednoduché formy, ticho a prítomnosť: byť spolu pred Bohom,
+                nielen hovoriť o Bohu. Najčastejšie sa osvedčí krátkosť spojená s vernosťou.
+              </p>
+
+              <h3>8) Psychologicko-vzťahový pohľad: bezpečie, zraniteľnosť, tri vrstvy</h3>
+              <p>
+                Spoločná modlitba nie je poradenská technika. Je to vzťahový akt, ktorý formuje schopnosť počúvať
+                bez opravovania, niesť spolu bolesti a žehnať namiesto formovania partnera podľa svojho obrazu.
+              </p>
+              <ul>
+                <li><strong>Psychologická vrstva:</strong> bezpečie a dôvera.</li>
+                <li><strong>Vzťahová vrstva:</strong> byť „na jednej strane“ aj uprostred rozdielov.</li>
+                <li><strong>Duchovná vrstva:</strong> Boh je „tretí v miestnosti“ – živý účastník, nie nástroj na zmenu partnera.</li>
+              </ul>
+              <p>
+                Modlitba niekedy odhalí hanbu, kritiku či mocenské hry. Nie preto, že „nefunguje“, ale preto,
+                že Božia prítomnosť osvetľuje pravdu. Kľúčom je nepodávať výkon, ale priniesť pravdu srdca.
+              </p>
+
+              <h3>9) Pastorálny a misijný pohľad: modlitba, ktorá nesie dom a službu</h3>
+              <p>
+                Mnohé krízy nezačínajú neverou, ale odpojením. Modlitba znovu pripája: vracia identitu „sme manželia pred Bohom“,
+                premieňa konflikt na rast a chráni intimitu pred vyhorením.
+              </p>
+              <p>
+                Misijne ide o evanjelizáciu zvnútra: ľudia uveria vzťahu, ktorý nesie pokoj, odpustenie, vernosť a radosť bez pretvárky.
+                Modlitba formuje aj rozlišovanie: komu a kedy otvoriť dom, do čoho sa zapojiť, čo odmietnuť bez viny,
+                ako slúžiť v zhode, nie v rozpore.
+              </p>
+
+            </div>
+          </details>
+        </section>
+
+        <section class="section" id="praxa">
+          <details open>
+            <summary>
+              <svg class="chev" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M7 5l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="sum-title">Udržateľná štruktúra na 10–15 minút</span>
+              <span class="sum-tag">Prax</span>
+            </summary>
+            <div class="content">
+              <ol>
+                <li><strong>1 min ticho</strong> (naladenie, dych, prítomnosť)</li>
+                <li><strong>2 min vďačnosť</strong> (každý 1–2 veci; Bohu aj partnerovi)</li>
+                <li><strong>3 min „pravda dňa“</strong> (bez obviňovania; druhý počúva)</li>
+                <li><strong>4–6 min prosby</strong> (za seba, za nás, za deti, za rozhodnutia)</li>
+                <li><strong>1 min odovzdanie</strong> (Otče náš alebo krátka spontánna modlitba)</li>
+                <li><strong>Požehnanie</strong> (jedna veta navzájom; ideálne aj s jednoduchým gestom úcty)</li>
+              </ol>
+              <p>
+                Vďačnosť rozpúšťa obrannosť, pravda buduje intimitu, prosby dávajú smer a nádej,
+                požehnanie uzatvára bez moralizovania.
+              </p>
+            </div>
+          </details>
+        </section>
+
+        <section class="section" id="pravidla">
+          <details open>
+            <summary>
+              <svg class="chev" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M7 5l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="sum-title">Šesť pravidiel, ktoré ochránia modlitbu pred zraňovaním</span>
+              <span class="sum-tag">Bezpečie</span>
+            </summary>
+            <div class="content">
+              <ol>
+                <li><strong>Modlitba nie je miesto na argument.</strong> Ak je napätie vysoké, modlite sa krátko a rozhovor odložte.</li>
+                <li><strong>Každý má právo na svoj jazyk modlitby.</strong> Striedajte sa alebo držte pevnú štruktúru.</li>
+                <li><strong>Nevyslovuj pred Bohom to, čo by si nepovedal priamo a láskavo.</strong> Žiadne „Pane, zmeň ho/ju, aby…“.</li>
+                <li><strong>Dôvernosť.</strong> Čo zaznie v modlitbe, nepoužije sa neskôr ako munícia.</li>
+                <li><strong>Modlitba má mať koniec.</strong> Rámec chráni pred útekom aj maratónom.</li>
+                <li><strong>Keď jeden nemôže, druhý môže – bez urážky.</strong> Minimum je niekedy jediný zdravý krok.</li>
+              </ol>
+              <p>
+                Základná logika: <strong>„my“ pred výkonom</strong>. Dobro vzťahu má prednosť pred dokonalosťou formy;
+                dobrovoľnosť je posvätná; zraniteľnosť sa chráni.
+              </p>
+            </div>
+          </details>
+        </section>
+
+        <section class="section" id="zaver">
+          <details open>
+            <summary>
+              <svg class="chev" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M7 5l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="sum-title">Záver: pravidelnosť, ktorá je láskavá</span>
+              <span class="sum-tag">Zhrnutie</span>
+            </summary>
+            <div class="content">
+              <p>
+                Najzrelšia manželská modlitba nie je tá, ktorá vyzerá dokonale. Je to tá, ktorá chráni vzťah,
+                nesie pravdu bez zraňovania, učí odpúšťať, dáva Bohu priestor medzi vami a je udržateľná v bežnom živote.
+              </p>
+              <p>
+                Ak chcete začať hneď, stačí minimum: 30 sekúnd ticha, jedna vďaka každý, jedna prosba každý,
+                Otče náš a krátke požehnanie. V malom kroku je často viac milosti než v veľkom pláne, ktorý nevydrží.
+              </p>
+            </div>
+          </details>
+        </section>
+
+        <section class="section">
+          <details>
+            <summary>
+              <svg class="chev" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M7 5l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="sum-title">Použité pramene (spomenuté v texte)</span>
+              <span class="sum-tag">Referencie</span>
+            </summary>
+            <div class="content">
+              <ul>
+                <li><em>Familiaris consortio</em></li>
+                <li><em>Gratissimam sane</em></li>
+                <li><em>Amoris laetitia</em></li>
+                <li><em>Sacramentum caritatis</em></li>
+                <li><em>Katechizmus Katolíckej cirkvi</em></li>
+                <li><em>Apostolic Tradition</em> (pripisovaná Hippolytovi z Ríma)</li>
+                <li>Patristická tradícia: Tertulián, Klement Alexandrijský, Augustín</li>
+                <li>Teológia tela (Ján Pavol II.)</li>
+              </ul>
+            </div>
+          </details>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Modlitba manželov bez detí</strong> — statická stránka pripravená pre GitHub Pages.</p>
+      <p>Režim počúvania rozbalí obsah pre plynulé TTS.</p>
+    </div>
+  </footer>
+
+  <script>
+    const allDetails = () => Array.from(document.querySelectorAll("details"));
+    const openAllBtn = document.getElementById("openAll");
+    const closeAllBtn = document.getElementById("closeAll");
+    const ttsBtn = document.getElementById("ttsMode");
+
+    function setAll(open) {
+      allDetails().forEach(d => d.open = open);
+    }
+
+    openAllBtn.addEventListener("click", () => {
+      setAll(true);
+      ttsBtn.setAttribute("aria-pressed", "true");
+      localStorage.setItem("ttsMode", "on");
+    });
+
+    closeAllBtn.addEventListener("click", () => {
+      setAll(false);
+      ttsBtn.setAttribute("aria-pressed", "false");
+      localStorage.setItem("ttsMode", "off");
+    });
+
+    ttsBtn.addEventListener("click", () => {
+      const isOn = ttsBtn.getAttribute("aria-pressed") === "true";
+      const next = !isOn;
+      ttsBtn.setAttribute("aria-pressed", String(next));
+      localStorage.setItem("ttsMode", next ? "on" : "off");
+      setAll(next);
+    });
+
+    // Restore preference
+    const saved = localStorage.getItem("ttsMode");
+    if (saved === "on") {
+      ttsBtn.setAttribute("aria-pressed", "true");
+      setAll(true);
+    }
+  </script>
+</body>
+</html>
